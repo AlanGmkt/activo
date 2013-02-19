@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>    
+    <script type="text/javascript" src="jquery.idle-timer.js"></script>
+</head>
+<body>
+    <div id="status" style="padding: 5px;">&nbsp;</div>
+    <script type="text/javascript">
+		(function($){
+			var timeout = 5000;
+	
+			$(document).bind("idle.idleTimer", function(){
+			   //aqui va ir el cambio de estado a inactivo
+			   //$("#status").html("User is idle :(").css("backgroundColor", "silver");
+			   alert('inactivo');
+			});
+			
+			$(document).bind("active.idleTimer", function(){
+				// $("#status").html("User is active :D").css("backgroundColor", "yellow");
+				alert('activo');
+			});
+			
+			$.idleTimer(timeout);
+			
+			$('#timeout').text(timeout/1000);
+		})(jQuery);
+    </script>
+</body>
+</html>
